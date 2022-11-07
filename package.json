@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --output-hashing none",
+    "build": "ng build --prod --output-hashing none && node build-script.js",
     "bundle": "node build-script.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
     "document-register-element": "1.14.10",
+    "@luigi-project/client": "1.25.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -39,6 +40,6 @@
     "karma-coverage": "~2.1.0",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
-    "typescript": "~4.5.2"
+    "typescript": "^4.8.4"
   }
 }

@@ -9,4 +9,5 @@ const concat = require("concat");
     ];
     await fs.ensureDir("elements");
     await concat(files, "elements/my-element.js");
+    console.log('built my-elements.js');
 })();

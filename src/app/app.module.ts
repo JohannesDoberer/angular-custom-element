@@ -18,10 +18,10 @@ import { AppComponent } from './app.component';
   entryComponents: [AppComponent]
 })
 export class AppModule {
-  constructor(private injector: Injector) { }
-
-  ngDoBootstrap() {
-    const el = createCustomElement(AppComponent, { injector: this.injector })
-    customElements.define('my-webcomponent', el);
+  constructor(private injector: Injector) {
+    const elem = createCustomElement(AppComponent, { injector })
+    customElements.define('my-webcomponent', elem);
   }
+
+  ngDoBootstrap() { }
 }
