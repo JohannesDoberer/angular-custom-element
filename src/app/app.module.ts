@@ -7,15 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
-  entryComponents: [AppComponent]
+    declarations: [
+        AppComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule
+    ],
+    providers: [{ provide: APP_BASE_HREF, useValue: '/' }]
 })
 export class AppModule {
   constructor(private injector: Injector) {
