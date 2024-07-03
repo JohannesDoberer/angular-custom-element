@@ -4,8 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --output-hashing none && node build-script.js",
-    "bundle": "node build-script.js",
+    "build": "ng build --output-hashing none && node build-script.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

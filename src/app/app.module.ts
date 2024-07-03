@@ -7,20 +7,34 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
-    declarations: [
-        AppComponent
-    ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule
-    ],
-    providers: [{ provide: APP_BASE_HREF, useValue: '/' }]
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
+  entryComponents: [AppComponent]
+  // bootstrap: [AppComponent] #comment for normal angular app
 })
 export class AppModule {
   constructor(private injector: Injector) {
-    const elem = createCustomElement(AppComponent, { injector })
-    customElements.define('my-webcomponent', elem);
   }
 
-  ngDoBootstrap() { }
+  ngDoBootstrap() {
+    const elem = createCustomElement(AppComponent, { injector: this.injector });
+    // @ts-ignore
+    if(window.Luigi){
+      // @ts-ignore
+      window.Luigi._registerWebcomponent(
+        // @ts-ignore
+        new URL(document.currentScript?.getAttribute('src'), location),
+        elem
+      );
+    }
+    else{
+      customElements.define('my-webcomponent', elem);
+    }
+  }
 }
