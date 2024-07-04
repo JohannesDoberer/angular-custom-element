@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { LuigiElement } from '@luigi-project/client/luigi-element'
 
 @Component({
   selector: 'app-root',
